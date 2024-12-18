@@ -536,6 +536,11 @@ esac
 
 
 sudo mount -o remount,rw /
+
+# Expand  Admin/TGIF Mananager Talk Group Field for 8 Digits
+
+sudo sed -i 's/maxlength="7"/maxlength="8"/g' /var/www/dashboard/mmdvmhost/tgif_manager.php
+
 pwf=/etc/dmrgwpass
 if [ ! /etc/dmrgwpass ]; then
  sudo cp /home/pi-star/DMRGateway-6/DMRGateway.pw /etc/dmrgwpass
